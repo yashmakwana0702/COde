@@ -1,0 +1,31 @@
+package lab7;
+import java.sql.*;
+import java.util.*;
+public class students extends MySQL{
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		Statement sta=stat();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("the statment created is " +sta);
+		System.out.println("the current student class is " );
+		MySQL.displaystudent(sta);
+		MySQL.displaydepartment(sta);
+		displayBranch(sta);
+		displaycourse(sta);
+		System.out.println();
+		System.out.println("the name of student  is :" );
+		String na=sc.next();
+		System.out.println("the roll no  for student  is :" );
+		int ro =sc.nextInt();
+		System.out.println("the current student class is " );
+		char gen = sc.next();
+		System.out.println("the current student class is " );
+		Date dOB
+		System.out.println("the current student class is " );
+		System.out.println("the current student class is " );
+		int bno= sc.nextInt();
+		
+		
+	}
+}

@@ -1,0 +1,12 @@
+package lab7;
+
+public class students extends MySQL{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MySQL my=new MySQL();
+		System.out.println(stat());
+
+	}
+
+}

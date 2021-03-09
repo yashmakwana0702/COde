@@ -1,0 +1,26 @@
+package lab7;
+import java.sql.*;
+import java.sql.Date ;
+import java.util.*;
+public class students extends MySQL{
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		Statement sta=stat();
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("the statment created is " +sta);
+			System.out.println("the current student class is " );
+			displaydepartment(sta);
+			displayBranch(sta);
+			displaycourse(sta);
+			String sinsert = "INSERT INTO student  VALUES (51154, 'DISHA PATEL', '2002-01-06', M, '2019-07-16', 102);";
+			  boolean rset = sta.execute(sinsert);
+			  System.out.print(rset);
+			MySQL.displaystudent(sta);
+		
+		}
+		
+		
+		
+	}
+}

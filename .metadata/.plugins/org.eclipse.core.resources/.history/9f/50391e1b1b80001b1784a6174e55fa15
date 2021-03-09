@@ -1,0 +1,16 @@
+package lab7;
+import java.sql.*;
+public class students extends MySQL{
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		Statement sta=stat();
+		System.out.println("the statment created is " +sta);
+		System.out.println("the current student class is " );
+		MySQL.displaystudent(sta);
+		MySQL.displaydepartment(sta);
+		displayBranch(sta);
+		displaycourse(sta);
+	}
+
+}

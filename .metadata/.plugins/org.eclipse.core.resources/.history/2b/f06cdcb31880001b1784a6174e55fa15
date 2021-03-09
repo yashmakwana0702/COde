@@ -1,0 +1,72 @@
+package lab7;
+import java.sql.*;
+public class MySQL {
+	  static Statement stat() {
+	      try {
+	    		  Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/stud?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC","root", "2648");
+	    		  Statement stmt = conn.createStatement();
+	    		  System.out.println(stmt);
+	    		  return stmt;  
+	    		  }
+	       catch(SQLException ex) {
+	         ex.printStackTrace();
+	         return null; 
+	      }
+	   }
+	static void displaystudent(Statement stmt) throws SQLException{
+        // Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
+        String strSelect = "select * from student";
+        System.out.println("The SQL statement is: " + strSelect + "\n"); // Echo For debugging
+        ResultSet rset = stmt.executeQuery(strSelect);
+        // Step 4: Process the ResultSet by scrolling the cursor forward via next().
+        //  For each row, retrieve the contents of the cells with getXxx(columnName).
+        System.out.println("The records selected are:");
+        int rowCount = 0;
+        System.out.format("%5s%20s%5s%20s%20s%10s\n","Roll no","Name ","gender","date of birth","date of join","bno" );
+        while(rset.next()) {   
+       	int Rol = rset.getInt("ROLLNO");
+           String name = rset.getString("name");
+           String dob = rset.getString("DOB");
+           String gen = rset.getString("gender");
+           String date = rset.getString("DOA");
+           int bno = rset.getInt("bcode");
+           System.out.format("%5d%20s%5s%20s%20s%10d\n",Rol,name,gen,dob,date,bno );
+           ++rowCount;
+        }
+        System.out.println("Total number of records = " + rowCount);
+        System.out.println();
+     } 
+	static void displaydepartment(Statement stmt) throws SQLException{
+        String strSelect = "select * from stud.department";
+        System.out.println("The SQL statement is: " + strSelect + "\n"); // Echo For debugging
+        ResultSet rset = stmt.executeQuery(strSelect);
+        System.out.println("The records selected are:");
+        int rowCount = 0;
+        System.out.format("%5s%20s\n","Department no","Name " );
+        while(rset.next()) {   
+        	int Rol = rset.getInt("DNO");
+        	String name = rset.getString("dname");
+        	System.out.format("%5d%20s\n",Rol,name);
+        	rowCount++;
+        }
+        System.out.println("Total number of records = " + rowCount);
+        System.out.println();
+     } 
+	static void displayBranch(Statement stmt) throws SQLException{
+         String strSelect = "select * from stud.branch";
+         System.out.println("The SQL statement is: " + strSelect + "\n"); // Echo For debugging
+         ResultSet rset = stmt.executeQuery(strSelect);
+         System.out.println("The records selected are:");
+         int rowCount = 0;
+         System.out.format("%5s%20s%5s\n","Department no","Name ","Department no" );
+         while(rset.next()) {   
+         	int Rol = rset.getInt("DNO");
+         	String name = rset.getString("dname");
+         	int dno=rset.getInt("DNO");
+         	System.out.format("%5d%20s%5d\n",Rol,name,dno);
+         	rowCount++;
+         }
+         System.out.println("Total number of records = " + rowCount);
+         System.out.println();
+      } 
+}
