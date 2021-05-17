@@ -9,6 +9,8 @@
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
 			<item value="`"/>
+			<item value="sta"/>
+			<item value="Department"/>
 			<item value="rm_time"/>
 			<item value="io_time"/>
 			<item value="wt_time"/>
@@ -24,6 +26,8 @@
 		</list>
 		<list key="replacehistory">
 			<item value="&apos;"/>
+			<item value="smt"/>
+			<item value="Customer"/>
 			<item value="process"/>
 			<item value="iotime"/>
 			<item value="iowait"/>

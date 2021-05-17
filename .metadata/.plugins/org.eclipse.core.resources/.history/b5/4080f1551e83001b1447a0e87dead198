@@ -1,0 +1,11 @@
+package lab7;
+import java.sql.*;
+import java.util.*;
+public class it_cu extends sql_item {
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) {
+		Statement smt=smt(); 
+
+	}
+
+}

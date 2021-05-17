@@ -1,0 +1,10 @@
+package lab7;
+
+public class it_cu extends sql_item {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
